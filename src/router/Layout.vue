@@ -1,12 +1,12 @@
 <template>
     <div class="layout">
-        <Header></Header>
+        <admin-header></admin-header>
     </div>    
 </template>
 <script>
-import Header from '@/components/Header'
+import AdminHeader from '@/components/Header'
 export default {
-    components:{ Header },
+    components:{ AdminHeader },
     name:'layout',
 }
 </script>
