@@ -55,7 +55,7 @@ header {
   border-bottom: 1px solid #eee;
   display: flex;
   .logo-container {
-    width: 240px;
+    min-width: 240px;
     height: 100%;
     display: flex;
     justify-content: center;

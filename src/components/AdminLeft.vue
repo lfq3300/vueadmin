@@ -1,15 +1,13 @@
 <template>
     <div class="left">
-        <el-menu class="left-menu">
-            <el-submenu index='0' v-for="(item, aindex) in link">
+        <el-menu router class="left-menu">
+            <el-submenu index='index' v-for='(item,aindex) in link' :key='aindex'>
                 <template slot="title">
-                    <i class="el-icon-location"></i>
+                    <i class="el-icon-location"></i>    
                     <span>{{item.title}}</span>
                 </template>
-                <el-menu-item index='0' v-for="(linkitem, bindex) in item.links">
-                    <router-link :to="{path:linkitem.path}">
+                <el-menu-item :index='linkitem.path' v-for='(linkitem,bindex) in item.links' :key='bindex'>
                         {{linkitem.title}}
-                    </router-link>   
                 </el-menu-item>
             </el-submenu>
         </el-menu>
@@ -18,20 +16,29 @@
 <script>
 export default {
     name:'left',
-    link:[
-        {
-            title:'导航栏',
-            links:[
-                {path:"/",title:'选项3'}
-            ]
+    data(){
+        return {
+            link:[
+                    {
+                        title:'首页',
+                        links:[
+                            {path:"/components/admin",title:'Admin'}
+                        ]
+                    },
+                    {
+                        title:'日志管理',
+                        links:[
+                            {path:"/components/log",title:'日志列表'}
+                        ]
+                    }
+                ]
         }
-    ]
+    }
 }
 </script>
 <style lang="less" scoped>
 .left {
-  width: 241px;
-  position: fixed;
+  width: 100%;
   height: 100%;
   .left-menu {
     height: 100%;
