@@ -27,8 +27,11 @@ export default {
     name:'layout',
     computed:{
         height(){
+            console.log(document.documentElement.clientHeight - 56)
             return {'height':document.documentElement.clientHeight - 56+ 'px'};
         }
+    },
+    created(){
     }
 }
 </script>
@@ -55,8 +58,10 @@ export default {
   padding-right: 30px;
 }
 .layout-title {
-  line-height: 25px;
+  line-height: 15px;
   display: flex;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
 }
 .layout-title strong {
   flex: 1;

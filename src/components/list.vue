@@ -1,0 +1,31 @@
+<template>
+    <div class="list">
+        <div v-for="(item, index) in builder" :key="index">
+           <Abutton v-if='item.type === "button"' :dom='item.dom'></Abutton>
+           <ATable v-if='item.type === "table"' :dom='item.dom' :tdata='item.data' :operation='item.operation'></ATable> 
+        </div>
+    </div>
+</template>
+<script>
+import Abutton from '@/components/Builder/Abutton'
+import ATable from '@/components/Builder/ATable'
+export default {
+    components:{Abutton,ATable},
+    name:'list',
+    props:{
+        builder:{
+            type:Array,
+            default: () => []
+        }
+    },
+    data(){
+        return {
+        }
+    },
+    mounted(){
+        builder:this.builder
+    },
+    created(){
+    }   
+}
+</script>
