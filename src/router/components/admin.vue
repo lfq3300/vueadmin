@@ -23,7 +23,7 @@ export default {
                             }
                         },
                         {
-                            type:'danger',
+                            type:'danger    ',
                             text:'删除'
                         }
                     ]
@@ -33,7 +33,7 @@ export default {
                     dom:[
                          {
                             title:'ID',
-                            name:'id'
+                            name:'id',
                         },
                         {
                             title:'姓名',
@@ -42,7 +42,7 @@ export default {
                         {
                             title:'电话',
                             name:'tel'
-                        }
+                        },
                     ],
                     data:[
                         {
@@ -74,6 +74,12 @@ export default {
                             }
                         }
                     ]
+                },
+                {
+                  type:'page',
+                  data:{
+                    total:100,
+                  },
                 }
             ]
         }
