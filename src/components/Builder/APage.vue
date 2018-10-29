@@ -35,7 +35,7 @@ export default {
 <style lang="less" scoped>
 .apage{
     float: right;
-    margin-top: 50px;
+    margin: 25px 0;
 }
 </style>
 

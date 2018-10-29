@@ -51,7 +51,10 @@ export default {
 }
 .layout-right {
   flex: 1;
-  overflow: hidden;
+  position: relative;
+
+  overflow-y: auto;
+  overflow-x: hidden;
   box-sizing: border-box;
   padding-top: 20px;
   padding-left: 30px;

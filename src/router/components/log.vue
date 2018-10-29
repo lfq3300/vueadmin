@@ -4,11 +4,11 @@
     </div>
 </template>
 <script>
-import Builderconfig from '@/components/config'
+import Builderconfig from "@/components/config";
 export default {
-    components:{Builderconfig},
-    name:'log'
-}
+  components: { Builderconfig },
+  name: "log"
+};
 </script>
 <style lang="less" scoped>
 </style>

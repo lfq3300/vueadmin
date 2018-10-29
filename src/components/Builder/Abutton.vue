@@ -29,6 +29,8 @@ export default {
          *  }
          */
         btnClick(action){
+            console.log(action);
+            this.$router.push({path: `/components${action.path}`})
             
         }
     },
