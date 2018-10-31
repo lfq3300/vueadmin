@@ -16,6 +16,10 @@ export default {
         dom:{
             type:Array,
             default:() => []
+        },
+        btnClick: {
+            type: Function,
+            default: (e) => {}
         }
     },
     methods:{
@@ -28,11 +32,6 @@ export default {
          *    },
          *  }
          */
-        btnClick(action){
-            console.log(action);
-            this.$router.push({path: `/components${action.path}`})
-            
-        }
     },
     created(){
     }

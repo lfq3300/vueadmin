@@ -1,13 +1,15 @@
 <template>
     <div class="admin">
-        <BuilderList :builder='builder'></BuilderList>
+      <search v-if="!hidden" :cancel-click='hideModel'></search>
+      <BuilderList :builder='builder' :btn-click='btnClick'></BuilderList>
     </div>
 </template>
 <script>
 import BuilderList from "@/components/list";
+import Search from "@/components/Builder/Search";
 // import TableMain from '@/components/TableMain'
 export default {
-  components: { BuilderList },
+  components: { BuilderList, Search },
   name: "admin",
   data() {
     return {
@@ -16,11 +18,18 @@ export default {
           type: "button",
           dom: [
             {
-              type: "success",
+              type: "primary",
               text: "新增",
               action: {
                 type: 1,
                 path: "/addClassify"
+              }
+            },
+            {
+              type: "success",
+              text: "搜索",
+              action: {
+                type: 2
               }
             },
             {
@@ -172,8 +181,23 @@ export default {
             total: 100
           }
         }
-      ]
+      ],
+      hidden: true
     };
+  },
+  methods: {
+    btnClick(action) {
+      if (action.type == 1) {
+        console.log(action);
+        this.$router.push({ path: `/components${action.path}` });
+      }
+      if (action.type == 2) {
+        this.hidden = false
+      }
+    },
+    hideModel () {
+      this.hidden = true
+    }
   }
 };
 </script>

@@ -21,7 +21,7 @@ export default {
         },
         btnClick: {
             type: Function,
-            default: () => {}
+            default: (e) => {}
         }
     },
     data(){
